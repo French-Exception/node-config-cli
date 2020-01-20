@@ -18,7 +18,7 @@ https://github.com/french-exception/node-config-api
 https://www.npmjs.com/package/@frenchex/config-api
 
 ```typescript
-npm install --save-dev @frenchex/config-api
+npm install --save @frenchex/config-api
 ```
 
 
