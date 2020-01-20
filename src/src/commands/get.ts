@@ -6,7 +6,7 @@ exports.command = 'get <key>'
 exports.desc = 'get key'
 exports.builder = {
     file: {
-        defaults: 'config.json',
+        default: path.join(process.cwd(), 'config', 'config.json'),
         description: 'first file loaded, will be root'
     },
     user: {
@@ -38,8 +38,7 @@ exports.builder = {
     }
 }
 exports.handler = async function (argv: ConfigGetHandlerInterface) {
-
-    const file = path.isAbsolute(argv.config) ? argv.config : path.normalize(path.join(process.cwd(), argv.config))
+    const file = path.isAbsolute(argv.file) ? argv.file : path.normalize(path.join(process.cwd(), argv.file))
     const root = path.dirname(file);
     const env = mapEnvs(argv.env, <any>process.env);
 
@@ -60,7 +59,7 @@ exports.handler = async function (argv: ConfigGetHandlerInterface) {
 
 export interface ConfigGetHandlerInterface {
     key?: string
-    config?: string
+    file?: string
     env?: Array<string>
     user?: boolean
     global?: boolean

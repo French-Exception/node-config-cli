@@ -43,7 +43,7 @@ exports.command = 'set <key> <value>';
 exports.desc = 'set key';
 exports.builder = {
     file: {
-        defaults: 'config.json',
+        "default": path.join(process.cwd(), 'config', 'config.json'),
         description: 'first file loaded'
     },
     user: {
@@ -66,7 +66,7 @@ exports.handler = function (argv) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    file = path.isAbsolute(argv.config) ? argv.config : path.normalize(path.join(process.cwd(), argv.config));
+                    file = path.isAbsolute(argv.file) ? argv.file : path.normalize(path.join(process.cwd(), argv.file));
                     root = path.dirname(file);
                     env = Helper_1.mapEnvs(argv.env, process.env);
                     payload = {

@@ -1,6 +1,6 @@
 export interface ConfigGetHandlerInterface {
     key?: string;
-    config?: string;
+    file?: string;
     env?: Array<string>;
     user?: boolean;
     global?: boolean;

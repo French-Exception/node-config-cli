@@ -11,7 +11,7 @@ exports.builder = {
         type: 'boolean'
     },
     file: {
-        defaults: 'config.json',
+        default: path.join(process.cwd(), 'config', 'config.json'),
         description: 'first file loaded'
     },
     user: {
@@ -30,7 +30,7 @@ exports.builder = {
 
 }
 exports.handler = async function (argv) {
-    const file = path.isAbsolute(argv.config) ? argv.config : path.normalize(path.join(process.cwd(), argv.config))
+    const file = path.isAbsolute(argv.file) ? argv.file : path.normalize(path.join(process.cwd(), argv.file))
     const root = path.dirname(file);
     const env = mapEnvs(argv.env, <any>process.env);
 
