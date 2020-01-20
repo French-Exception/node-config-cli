@@ -1,6 +1,6 @@
 {
   "name": "@renchex/npm-config-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Configuration CLI",
   "bin": "src/src/cli.js",
   "scripts": {
@@ -28,11 +28,7 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "@frenchex/config-api": "^0.0.1",
-    "@types/mkdirp": "^0.5.2",
-    "fs-extra": "^8.1.0",
-    "mkdirp": "^0.5.1",
-    "mkdirp-promise": "^5.0.1",
+    "@frenchex/config-api": "^0.0.3",
     "yargs": "^15.1.0"
   }
 }
