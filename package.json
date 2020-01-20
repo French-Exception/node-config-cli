@@ -1,6 +1,6 @@
 {
   "name": "@frenchex/config-cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Configuration CLI",
   "directories": {
     "bin": "bin"
@@ -34,7 +34,7 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "@frenchex/config-api": "^0.0.5",
+    "@frenchex/config-api": "^0.0.6",
     "yargs": "^15.1.0"
   }
 }

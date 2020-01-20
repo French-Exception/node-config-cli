@@ -46,5 +46,5 @@ exports.handler = async function (argv) {
 
     const dump = await config.dump(argv.raw);
 
-    console.log(dump);
+    console.log(JSON.stringify(dump, null, 2));
 }

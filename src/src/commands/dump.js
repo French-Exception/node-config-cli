@@ -87,7 +87,7 @@ exports.handler = function (argv) {
                     return [4 /*yield*/, config.dump(argv.raw)];
                 case 2:
                     dump = _a.sent();
-                    console.log(dump);
+                    console.log(JSON.stringify(dump, null, 2));
                     return [2 /*return*/];
             }
         });
