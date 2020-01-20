@@ -4,7 +4,7 @@ import * as yargs from "yargs";
 
 yargs
     .commandDir('./commands', {})
-    .help('h')
+    .help()
     .version()
-    .demandCommand()
+    .demandCommand(1)
     .argv

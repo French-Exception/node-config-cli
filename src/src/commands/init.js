@@ -50,7 +50,10 @@ exports.handler = function (argv) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, config_api_1.init(argv.file)];
+                case 0:
+                    if (argv.help)
+                        return [2 /*return*/];
+                    return [4 /*yield*/, config_api_1.init(argv.file)];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];

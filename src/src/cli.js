@@ -4,8 +4,8 @@ exports.__esModule = true;
 var yargs = require("yargs");
 yargs
     .commandDir('./commands', {})
-    .help('h')
+    .help()
     .version()
-    .demandCommand()
+    .demandCommand(1)
     .argv;
 //# sourceMappingURL=cli.js.map

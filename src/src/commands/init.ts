@@ -10,5 +10,7 @@ exports.builder = {
     }
 }
 exports.handler = async function (argv) {
+    if (argv.help)
+        return
     await init(argv.file);
 }
