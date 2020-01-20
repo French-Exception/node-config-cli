@@ -26,4 +26,5 @@ npm install --save @frenchex/config-api
 
 ```bash
 env=dev frenchex-config get "foo.bar" --config ./test-res/js.js --env env
+env=dev frenchex-config set "foo.bar" "my_value_%env%" --config ./test-res/js.js --env env
 ```

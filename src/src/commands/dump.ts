@@ -2,9 +2,14 @@ import * as Config from "@frenchex/config-api";
 import * as path from "path";
 import {mapEnvs} from "../lib/Helper";
 
-exports.command = 'set <key> <value>'
-exports.desc = 'set key'
+exports.command = 'dump'
+exports.desc = 'dump configuration as json'
 exports.builder = {
+    raw: {
+        default: false,
+        description: 'do not resolve',
+        type: 'boolean'
+    },
     file: {
         defaults: 'config.json',
         description: 'first file loaded'
@@ -39,7 +44,7 @@ exports.handler = async function (argv) {
 
     const config = await Config.fromFile(payload)
 
-    await config.set(argv.key, argv.value);
+    const dump = await config.dump(argv.raw);
 
-    await config.save(file);
+    console.log(dump);
 }

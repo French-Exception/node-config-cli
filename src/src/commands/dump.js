@@ -39,9 +39,14 @@ exports.__esModule = true;
 var Config = require("@frenchex/config-api");
 var path = require("path");
 var Helper_1 = require("../lib/Helper");
-exports.command = 'set <key> <value>';
-exports.desc = 'set key';
+exports.command = 'dump';
+exports.desc = 'dump configuration as json';
 exports.builder = {
+    raw: {
+        "default": false,
+        description: 'do not resolve',
+        type: 'boolean'
+    },
     file: {
         defaults: 'config.json',
         description: 'first file loaded'
@@ -62,7 +67,7 @@ exports.builder = {
 };
 exports.handler = function (argv) {
     return __awaiter(this, void 0, void 0, function () {
-        var file, root, env, payload, config;
+        var file, root, env, payload, config, dump;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -79,15 +84,13 @@ exports.handler = function (argv) {
                     return [4 /*yield*/, Config.fromFile(payload)];
                 case 1:
                     config = _a.sent();
-                    return [4 /*yield*/, config.set(argv.key, argv.value)];
+                    return [4 /*yield*/, config.dump(argv.raw)];
                 case 2:
-                    _a.sent();
-                    return [4 /*yield*/, config.save(file)];
-                case 3:
-                    _a.sent();
+                    dump = _a.sent();
+                    console.log(dump);
                     return [2 /*return*/];
             }
         });
     });
 };
-//# sourceMappingURL=set.js.map
+//# sourceMappingURL=dump.js.map
