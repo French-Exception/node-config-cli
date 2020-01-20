@@ -20,3 +20,10 @@ https://www.npmjs.com/package/@frenchex/config-api
 ```typescript
 npm install -g @frenchex/config-api
 ```
+
+
+# Example
+
+```bash
+env=dev node src/src/cli.js get "foo.bar" --config ./test-res/js.js --env env
+```
