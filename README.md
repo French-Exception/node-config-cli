@@ -18,12 +18,12 @@ https://github.com/french-exception/node-config-api
 https://www.npmjs.com/package/@frenchex/config-api
 
 ```typescript
-npm install -g @frenchex/config-api
+npm install --save-dev @frenchex/config-api
 ```
 
 
 # Example
 
 ```bash
-env=dev node src/src/cli.js get "foo.bar" --config ./test-res/js.js --env env
+env=dev frenchex-config get "foo.bar" --config ./test-res/js.js --env env
 ```
