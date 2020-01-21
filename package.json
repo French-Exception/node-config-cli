@@ -34,7 +34,7 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "@frenchex/config-api": "^0.0.8",
+    "@frenchex/config-api": "^0.0.9",
     "yargs": "^15.1.0"
   }
 }
