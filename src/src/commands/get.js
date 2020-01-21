@@ -86,8 +86,8 @@ exports.handler = function (argv) {
                     payload = {
                         file: file,
                         root: root,
-                        global: { load: argv.global },
-                        user: { load: argv.user },
+                        global: { load: !!argv.global, path: argv.global },
+                        user: { load: !!argv.user, path: argv.user },
                         env: env
                     };
                     return [4 /*yield*/, Config.fromFile(payload)];

@@ -45,8 +45,8 @@ exports.handler = async function (argv: ConfigGetHandlerInterface) {
     const payload = {
         file: file,
         root: root,
-        global: {load: argv.global},
-        user: {load: argv.user},
+        global: {load: !!argv.global, path: argv.global},
+        user: {load: !!argv.user, path: argv.user},
         env: env
     }
 

@@ -62,7 +62,7 @@ exports.builder = {
 };
 exports.handler = function (argv) {
     return __awaiter(this, void 0, void 0, function () {
-        var file, root, env, payload, config;
+        var file, root, env, payload, config, savedToFile;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -84,7 +84,8 @@ exports.handler = function (argv) {
                     _a.sent();
                     return [4 /*yield*/, config.save(file)];
                 case 3:
-                    _a.sent();
+                    savedToFile = _a.sent();
+                    console.log(savedToFile);
                     return [2 /*return*/];
             }
         });

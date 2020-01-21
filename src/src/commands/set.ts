@@ -41,5 +41,7 @@ exports.handler = async function (argv) {
 
     await config.set(argv.key, argv.value);
 
-    await config.save(file);
+    const savedToFile = await config.save(file);
+
+    console.log(savedToFile);
 }
