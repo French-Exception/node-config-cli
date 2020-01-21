@@ -4,4 +4,5 @@ export interface ConfigGetHandlerInterface {
     env?: Array<string>;
     user?: boolean;
     global?: boolean;
+    raw?: boolean;
 }

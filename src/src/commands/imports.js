@@ -38,18 +38,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var Config = require("@frenchex/config-api");
 var path = require("path");
-var Helper_1 = require("./../lib/Helper");
-exports.command = 'get <key>';
-exports.desc = 'get key';
+var Helper_1 = require("../lib/Helper");
+exports.command = 'imports';
+exports.desc = 'manage imports';
 exports.builder = {
-    file: {
-        "default": path.join(process.cwd(), 'config', 'config.json'),
-        description: 'first file loaded, will be root'
-    },
     raw: {
         "default": false,
-        description: "return raw value",
-        type: "boolean"
+        description: 'do not resolve',
+        type: 'boolean'
+    },
+    file: {
+        "default": path.join(process.cwd(), 'config', 'config.json'),
+        description: 'first file loaded'
     },
     user: {
         type: 'boolean',
@@ -57,32 +57,17 @@ exports.builder = {
     },
     global: {
         type: 'boolean',
-        description: 'import global config'
+        description: 'import system config'
     },
     env: {
         type: 'array',
-        description: 'environment variables for loading, VAR=VALUE',
+        description: 'environment variables for loading',
         "default": []
-    },
-    string: {
-        type: 'boolean',
-        description: 'output is a string',
-        "default": null
-    },
-    object: {
-        type: 'object',
-        description: 'output is an object',
-        "default": null
-    },
-    array: {
-        type: 'array',
-        description: 'output is an array'
     }
 };
 exports.handler = function (argv) {
     return __awaiter(this, void 0, void 0, function () {
-        var file, root, env, payload, config, value;
-        var _this = this;
+        var file, root, env, payload, config, dump;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -92,34 +77,20 @@ exports.handler = function (argv) {
                     payload = {
                         file: file,
                         root: root,
-                        global: { load: !!argv.global, path: argv.global },
-                        user: { load: !!argv.user, path: argv.user },
+                        global: { load: argv.global },
+                        user: { load: argv.user },
                         env: env
                     };
                     return [4 /*yield*/, Config.fromFile(payload)];
                 case 1:
                     config = _a.sent();
-                    return [4 /*yield*/, (function () { return __awaiter(_this, void 0, void 0, function () {
-                            var _a, _b;
-                            return __generator(this, function (_c) {
-                                switch (_c.label) {
-                                    case 0:
-                                        if (!argv.raw) return [3 /*break*/, 3];
-                                        _b = (_a = config).getRaw;
-                                        return [4 /*yield*/, config.interpolateString(argv.key)];
-                                    case 1: return [4 /*yield*/, _b.apply(_a, [_c.sent()])];
-                                    case 2: return [2 /*return*/, _c.sent()];
-                                    case 3: return [4 /*yield*/, config.get(argv.key)];
-                                    case 4: return [2 /*return*/, _c.sent()];
-                                }
-                            });
-                        }); })()];
+                    return [4 /*yield*/, config.dump(argv.raw)];
                 case 2:
-                    value = _a.sent();
-                    console.log(value);
+                    dump = _a.sent();
+                    console.log(JSON.stringify(dump, null, 2));
                     return [2 /*return*/];
             }
         });
     });
 };
-//# sourceMappingURL=get.js.map
+//# sourceMappingURL=imports.js.map

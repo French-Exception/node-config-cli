@@ -9,6 +9,11 @@ exports.builder = {
         default: path.join(process.cwd(), 'config', 'config.json'),
         description: 'first file loaded, will be root'
     },
+    raw: {
+        default: false,
+        description: "return raw value",
+        type: "boolean"
+    },
     user: {
         type: 'boolean',
         description: 'import user config'
@@ -52,7 +57,13 @@ exports.handler = async function (argv: ConfigGetHandlerInterface) {
 
     const config = await Config.fromFile(payload)
 
-    const value = await config.get<any>(argv.key)
+    const value = await (async () => {
+        if (argv.raw)
+            return await config.getRaw(<string>await config.interpolateString<string>(argv.key))
+        else
+            return await config.get<any>(argv.key)
+
+    })()
 
     console.log(value);
 }
@@ -63,4 +74,5 @@ export interface ConfigGetHandlerInterface {
     env?: Array<string>
     user?: boolean
     global?: boolean
+    raw?: boolean
 }
