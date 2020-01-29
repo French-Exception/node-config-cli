@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
-exports.__esModule = true;
-var yargs = require("yargs");
+Object.defineProperty(exports, "__esModule", { value: true });
+const yargs = require("yargs");
 yargs
     .commandDir('./commands', {})
     .help()

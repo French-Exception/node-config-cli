@@ -1,4 +1,4 @@
-import * as Config from "@frenchex/config-api";
+import * as ConfigApi from "@frenchex/config-api";
 import * as path from "path"
 import {mapEnvs} from "./../lib/Helper"
 
@@ -55,7 +55,7 @@ exports.handler = async function (argv: ConfigGetHandlerInterface) {
         env: env
     }
 
-    const config = await Config.fromFile(payload)
+    const config = await ConfigApi.fromFile(payload)
 
     const value = await (async () => {
         if (argv.raw)

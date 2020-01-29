@@ -1,30 +1,32 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "sourceMap": true,
     "declaration": true,
     "diagnostics": false,
-    "newLine": "LF",
-    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "pretty": true,
-    "preserveConstEnums": true,
-    "watch": false,
-    "sourceRoot": "src",
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "stripInternal": true,
-    "skipLibCheck": false,
-    "downlevelIteration": true,
     "lib": [
       "es2020"
     ],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "preserveConstEnums": true,
+    "pretty": true,
+    "skipLibCheck": false,
+    "sourceMap": true,
+    "sourceRoot": "src",
+    "stripInternal": true,
+    "target": "ES2020",
     "typeRoots": [
       "./node_modules/@types",
-      "./src/src"
-    ]
+      "./src/"
+    ],
+    "watch": false,
+    "outDir": "dist"
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*.ts",
+    "test/**/*.specs.*.ts"
   ]
 }
