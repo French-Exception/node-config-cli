@@ -1,7 +1,7 @@
 {
   "author": "Stéphane Erard <serard06@protonmail.com>",
   "dependencies": {
-    "@frenchex/config-api": "^0.0.10",
+    "@frenchex/config-api": "^0.0.11",
     "yargs": "^15.1.0"
   },
   "description": "Configuration CLI",
