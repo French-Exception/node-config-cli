@@ -1,3 +1,17 @@
+[![npm @latest](https://img.shields.io/npm/v/@frenchex/config-cli)](https://www.npmjs.com/package/@frenchex/config-cli)
+[![npm downloads](https://img.shields.io/npm/dt/@frenchex/config-cli)](https://www.npmjs.com/package/@frenchex/config-cli)
+[![dependencies Status](https://david-dm.org/french-exception/node-config-cli/status.svg)](https://david-dm.org/french-exception/node-config-cli)
+[![devDependencies Status](https://david-dm.org/french-exception/node-config-cli/dev-status.svg)](https://david-dm.org/french-exception/node-config-cli?type=dev)
+[![Greenkeeper badge](https://badges.greenkeeper.io/jdalrymple/node-gitlab.svg)](https://greenkeeper.io/)
+[![Code Climate](https://codeclimate.com/github/french-exception/node-config-cli/badges/gpa.svg)](https://codeclimate.com/github/jdalrymple/node-gitlab)
+[![Build Status](https://img.shields.io/travis/jdalrymple/node-gitlab/master.svg)](https://travis-ci.org/jdalrymple/node-gitlab)
+[![Coverage](https://img.shields.io/codecov/c/github/jdalrymple/node-gitlab/master.svg)](https://codecov.io/gh/jdalrymple/node-gitlab)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Code Style: Prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4.svg)](https://img.shields.io/badge/code%20style-prettier-ff69b4.svg)
+[![Install Size](https://packagephobia.now.sh/badge?p=gitlab)](https://packagephobia.now.sh/result?p=gitlab)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/jdalrymple/node-gitlab/blob/master/LICENSE.md)
+
 # About
 
 Configuration CLI gives you command line interface over Configuration files
