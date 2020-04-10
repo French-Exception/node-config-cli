@@ -11,7 +11,6 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^13.9.3",
     "@types/yargs": "^15.0.4",
-    "bump": "^0.2.5",
     "chai": "^4.2.0",
     "mocha": "^7.1.1",
     "nyc": "^15.0.0",
@@ -26,7 +25,7 @@
     "cli"
   ],
   "license": "ISC",
-  "name": "@frenchex/config-cli",
+  "name": "@frenchex/config-cli.ts",
   "publishConfig": {
     "access": "public"
   },
