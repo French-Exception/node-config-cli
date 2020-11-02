@@ -1,4 +1,4 @@
-import * as Config from "@frenchex/config-api";
+import * as Config from "@frenchex/config-api.ts";
 
 export async function fromFile(request: Config.ConfigurationLoadingRequestInterface): Promise<Config.Config.ConfigurationInterface> {
     const payload: Config.ConfigurationLoadingRequestInterface = {

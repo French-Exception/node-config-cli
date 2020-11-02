@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Config = require("@frenchex/config-api");
+const Config = require("@frenchex/config-api.ts");
 async function fromFile(request) {
     const payload = {
         configuration: request.configuration,

@@ -1,7 +1,7 @@
 {
   "author": "Stéphane Erard <serard06@protonmail.com>",
   "dependencies": {
-    "@frenchex/config-api.ts": "^0.0.12",
+    "@frenchex/config-api.ts": "^0.2.2",
     "yargs": "^15.3.1"
   },
   "description": "Configuration CLI",
@@ -36,5 +36,5 @@
     "dev": "tsc -w",
     "cover": "nyc mocha -r ts-node/register -r source-map-support/register test/**/*.js"
   },
-  "version": "0.0.16"
+  "version": "0.2.2"
 }

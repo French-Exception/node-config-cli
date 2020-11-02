@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const ConfigApi = require("@frenchex/config-api");
+const ConfigApi = require("@frenchex/config-api.ts");
 const path = require("path");
 const Helper_1 = require("./../lib/Helper");
 exports.command = 'get <key>';
