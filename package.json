@@ -1,7 +1,7 @@
 {
   "author": "Stéphane Erard <serard06@protonmail.com>",
   "dependencies": {
-    "@frenchex/config-api.ts": "^0.2.2",
+    "@frenchex/config-api": "^0.3.1",
     "yargs": "^15.3.1"
   },
   "description": "Configuration CLI",
@@ -25,16 +25,21 @@
     "cli"
   ],
   "license": "ISC",
-  "name": "@frenchex/config-cli.ts",
+  "name": "@frenchex/config-cli",
   "publishConfig": {
     "access": "public"
   },
   "repository": "git@github.com:French-Exception/node-config-cli.git",
   "scripts": {
-    "test": "mocha -r ts-node/register -r source-map-support/register test/**/*.js",
+    "configure": "frenchex-config init",
+    "watch": "tsc -w",
     "build": "tsc",
-    "dev": "tsc -w",
-    "cover": "nyc mocha -r ts-node/register -r source-map-support/register test/**/*.js"
+    "test.unit": "mocha -r ts-node/register -r source-map-support/register test/**/*.js",
+    "cover": "nyc mocha -r ts-node/register -r source-map-support/register test/**/*.js",
+    "bump.patch": "release-it patch --ci",
+    "bump.minor": "release-it minor --ci",
+    "bump.major": "release-it major --ci",
+    "release": "npm publish"
   },
-  "version": "0.2.2"
+  "version": "0.3.1"
 }

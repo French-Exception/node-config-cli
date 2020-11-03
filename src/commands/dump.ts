@@ -1,4 +1,4 @@
-import * as Config from "@frenchex/config-api.ts";
+import * as Config from "@frenchex/config-api";
 import * as path from "path";
 import {mapEnvs} from "../lib/Helper";
 

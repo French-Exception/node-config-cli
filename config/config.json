@@ -1,0 +1,9 @@
+{
+  "imports": [],
+  "ns": "",
+  "$": {
+    "version": "1.0",
+    "foo": "%bar%",
+    "bar": "foobar"
+  }
+}

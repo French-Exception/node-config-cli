@@ -36,61 +36,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.mapEnvs = exports.fromFile = void 0;
 var Config = require("@frenchex/config-api");
-var path = require("path");
-var Helper_1 = require("../lib/Helper");
-exports.command = 'imports';
-exports.desc = 'manage imports';
-exports.builder = {
-    raw: {
-        default: false,
-        description: 'do not resolve',
-        type: 'boolean'
-    },
-    file: {
-        default: path.join(process.cwd(), 'config', 'config.json'),
-        description: 'first file loaded'
-    },
-    user: {
-        type: 'boolean',
-        description: 'import user config'
-    },
-    global: {
-        type: 'boolean',
-        description: 'import system config'
-    },
-    env: {
-        type: 'array',
-        description: 'environment variables for loading',
-        default: []
-    }
-};
-exports.handler = function (argv) {
+function fromFile(request) {
     return __awaiter(this, void 0, void 0, function () {
-        var file, root, env, payload, config, dump;
+        var payload;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    file = path.isAbsolute(argv.file) ? argv.file : path.normalize(path.join(process.cwd(), argv.file));
-                    root = path.dirname(file);
-                    env = Helper_1.mapEnvs(argv.env, process.env);
                     payload = {
-                        file: file,
-                        root: root,
-                        global: { load: argv.global },
-                        user: { load: argv.user },
-                        env: env
+                        configuration: request.configuration,
+                        env: request.env,
+                        file: request.file,
+                        $: request.$,
+                        declaration: {
+                            imports: []
+                        },
+                        user: { path: null, load: true },
+                        global: { path: null, load: true }
                     };
                     return [4 /*yield*/, Config.fromFile(payload)];
-                case 1:
-                    config = _a.sent();
-                    return [4 /*yield*/, config.dump(argv.raw)];
-                case 2:
-                    dump = _a.sent();
-                    console.log(JSON.stringify(dump, null, 2));
-                    return [2 /*return*/];
+                case 1: return [2 /*return*/, _a.sent()];
             }
         });
     });
-};
-//# sourceMappingURL=imports.js.map
+}
+exports.fromFile = fromFile;
+function mapEnvs(envs, processEnv) {
+    return (function () {
+        var _return = {};
+        envs.forEach(function (key, index) {
+            var _value = processEnv[key];
+            _return[key] = _value;
+        });
+        return _return;
+    })();
+}
+exports.mapEnvs = mapEnvs;
+//# sourceMappingURL=Helper.js.map

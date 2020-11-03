@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Config = require("@frenchex/config-api.ts");
+var Config = require("@frenchex/config-api");
 var path = require("path");
 var Helper_1 = require("../lib/Helper");
 exports.command = 'dump';

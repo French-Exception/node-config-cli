@@ -21,9 +21,9 @@ Configuration CLI gives you command line interface over Configuration files
 Install as global package or as dependency
 ```typescript
 // as global
-npm install -g @frenchex/config-cli 
+npm install -g @frenchex/config-cli
 // as npm dependency
-npm install --save @frenchex/config-cli 
+npm install --save @frenchex/config-cli
 ```
 
 ## Initialization

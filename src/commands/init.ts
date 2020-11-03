@@ -1,5 +1,5 @@
 import * as path from "path";
-import {init} from "@frenchex/config-api.ts";
+import {init} from "@frenchex/config-api";
 
 exports.command = 'init'
 exports.desc = 'init Configuration'
