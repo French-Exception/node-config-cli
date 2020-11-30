@@ -2,7 +2,8 @@
   "$": {
     "foo": {
       "bar": "foobar",
-      "foobar": "%foo.bar%%foo.bar%"
+      "foobar": "%foo.bar%%foo.bar%",
+      "instance": 1
     }
   }
 }
