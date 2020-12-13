@@ -22,6 +22,16 @@ exports.builder = {
         type: 'array',
         description: 'environment variables for loading',
         default: []
+    },
+    pipe: {
+        type: 'boolean',
+        description: 'get input from stdin',
+        default: false
+    },
+    json: {
+        type: 'boolean',
+        description: 'get input as json',
+        default: false
     }
 };
 exports.handler = async function (argv) {
@@ -36,8 +46,39 @@ exports.handler = async function (argv) {
         env: env
     };
     const config = await Config.fromFile(payload);
-    await config.set(argv.key, argv.value);
-    const savedToFile = await config.save(file);
+    var hasRun = false;
+    const next = async () => {
+        if (hasRun) {
+            return;
+        }
+        hasRun = true;
+        await config.set(argv.key, argv.value);
+        const savedToFile = await config.save(file);
+        return savedToFile;
+    };
+    var savedToFile = "";
+    if (argv.pipe) {
+        var data = "";
+        var self = process.stdin;
+        self.on('readable', function () {
+            var chunk = this.read();
+            if (chunk !== null) {
+                data += chunk;
+            }
+        });
+        self.on('end', async function () {
+            if (argv.json) {
+                argv.value = JSON.parse(data.trim());
+            }
+            else {
+                argv.value = data.trim();
+            }
+            savedToFile = await next();
+        });
+    }
+    else {
+        savedToFile = await next();
+    }
     console.log(savedToFile);
 };
 //# sourceMappingURL=set.js.map
